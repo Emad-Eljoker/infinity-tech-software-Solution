@@ -5,56 +5,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1E3A8A">
-    <meta name="description"
-        content="Infinity Tech Solution - شركة متخصصة في تطوير البرمجيات وأنظمة الـ Embedded Systems و IoT.">
-
+    <meta name="description" content="Infinity Tech Solution - شركة متخصصة في تطوير البرمجيات وأنظمة الـ Embedded Systems و IoT.">
     <title>Infinity Tech Solution</title>
     <link rel="icon" href="logo.png">
-
+    <link rel="stylesheet" href="i">
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-          link[rel="icon"] {
+      /* تخصيصات عامة */
+link[rel="icon"] {
     border-radius: 50%;
-  }
-        /* تخصيصات إضافية */
-        .gradient-bg {
-            background: linear-gradient(135deg, #1E3A8A, #10B981);
-        }
+}
 
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+/* تخصيصات إضافية للوضع الداكن */
+body.dark-mode {
+    background-color: #1a1a1a; /* خلفية داكنة */
+    color: #f4f4f4; /* نص فاتح */
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+body.dark-mode .gradient-bg {
+    background: linear-gradient(135deg, #000103, #511eeb); /* تدرج ألوان داكنة */
+}
 
-        .video-card iframe {
-            border-radius: 10px;
-            overflow: hidden;
-            width: 100%;
-            height: 200px;
-        }
+body.dark-mode .card {
+    background-color: #2d3748; /* خلفية داكنة للبطاقات */
+    color: #f4f4f4; /* نص فاتح داخل البطاقات */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        @media (min-width: 768px) {
-            .video-card iframe {
-                height: 300px;
-            }
-        }
+body.dark-mode .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* ظل داكن عند hover */
+    background-color: #011729;
+ transition:100ms ;
+}
+
+body.dark-mode .video-card {
+    background-color: #2d3748; /* خلفية داكنة للفيديوهات */
+    color: #f4f4f4; /* نص فاتح داخل الفيديوهات */
+}
+body.dark-mode .video-card:hover {
+    background-color: #2d3748; /* خلفية داكنة للفيديوهات */
+    color: #f4f4f4; /* نص فاتح داخل الفيديوهات */
+    background-color: #07406f;
+}
+body.dark-mode .btn {
+    
+    color: #ffffff; /* نص أبيض داخل الأزرار */
+    transition: background-color 0.3s ease;
+}
+body.dark-mode .btn:hover {
+    
+    background-color: #1d4907;
+}
+body.dark-mode .btn:active {
+    
+    background-color: #4b1905;
+}
+
+body.dark-mode .text-gray-300 {
+    color: #cbd5e0; /* تعديل لون النص الرمادي */
+}
+
+body.dark-mode .bg-gray-800 {
+    background-color: #2d3748; /* خلفية داكنة للأقسام */
+    color: #f4f4f4; /* نص فاتح */
+}
+
+body.dark-mode .bg-gray-700 {
+    background-color: #4a5568; /* خلفية داكنة للبطاقات */
+    color: #f4f4f4; /* نص فاتح */
+}
+
+/* تخصيصات إضافية للوضع العادي */
+body.light-mode {
+    background-color: #f7fafc; /* خلفية فاتحة */
+    color: #2d3748; /* نص داكن */
+}
+
+body.light-mode .gradient-bg {
+    background: linear-gradient(135deg, #4299e1, #48bb78); /* تدرج ألوان زاهية */
+}
+
+body.light-mode .card {
+    background-color: #ffffff; /* خلفية بيضاء للبطاقات */
+    color: #4a5568; /* نص داكن داخل البطاقات */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+body.light-mode .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* ظل أكبر عند hover */
+background-color: #dae6fc;
+}
+
+body.light-mode .video-card {
+    background-color: #ffffff; /* خلفية بيضاء للفيديوهات */
+    color: #adc4ec; /* نص داكن داخل الفيديوهات */
+    
+}
+body.light-mode .video-card:hover {
+    background-color: #c1d3f3;
+}
+
+body.light-mode .btn {
+   
+    color: #ffffff; /* نص أبيض داخل الأزرار */
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .btn:hover {
+    background-color: #3182ce; /* لون أزرق داكن عند hover */
+}
+
+body.light-mode .text-gray-300 {
+    color: #4a5568; /* تعديل لون النص الرمادي */
+}
+
+body.light-mode .bg-gray-800 {
+    background-color: #ffffff; /* خلفية بيضاء للأقسام */
+    color: #2d3748; /* نص داكن */
+}
+
+body.light-mode .bg-gray-700 {
+    background-color: #edf2f7; /* خلفية رمادية فاتحة للبطاقات */
+    color: #2d3748; /* نص داكن */
+}
+
+/* تصميم زر التبديل */
+.switch {
+    display: block;
+    background-color: black;
+    width: 50px;
+    height: 95px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2), 0 0 1px 2px black, inset 0 2px 2px -2px white, inset 0 0 2px 15px #47434c, inset 0 0 2px 22px black;
+    border-radius: 5px;
+    padding: 20px;
+    perspective: 700px;
+    transform: scale(0.5);
+    margin: 20px auto;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch input:checked + .button {
+    transform: translateZ(20px) rotateX(25deg);
+    box-shadow: 0 -10px 20px #ff1818;
+}
+
+.switch input:checked + .button .light {
+    animation: flicker 0.2s infinite 0.3s;
+}
+
+.switch input:checked + .button .shine {
+    opacity: 1;
+}
+
+.switch input:checked + .button .shadow {
+    opacity: 0;
+}
+
+.switch .button {
+    display: block;
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    transform-origin: center center -20px;
+    transform: translateZ(20px) rotateX(-25deg);
+    transform-style: preserve-3d;
+    background-color: #9b0621;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(#980000 0%, #6f0000 30%, #6f0000 70%, #980000 100%);
+    background-repeat: no-repeat;
+}
+
+.switch .button::before {
+    content: "";
+    background: linear-gradient(rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.3) 30%, #650000 75%, #320000) 50% 50%/97% 97%, #b10000;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    position: absolute;
+    top: 0;
+}
+
+.switch .button::after {
+    content: "";
+    background-image: linear-gradient(#650000, #320000);
+    width: 100%;
+    height: 50px;
+    transform-origin: top;
+    transform: translateY(50px) rotateX(-90deg);
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 50px 8px 0px black, 0 80px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.switch .light {
+    opacity: 0;
+    animation: light-off 1s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffc97e, #ff1818 40%, transparent 70%);
+}
+
+.switch .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 30%, rgba(101, 0, 0, 0.7) 70%);
+    background-size: 10px 10px;
+}
+
+.switch .characters {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, white) 50% 20%/5% 20%, radial-gradient(circle, transparent 50%, white 52%, white 70%, transparent 72%) 50% 80%/33% 25%;
+    background-repeat: no-repeat;
+}
+
+.switch .shine {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, transparent 3%) 50% 50%/97% 97%, linear-gradient(rgba(255, 255, 255, 0.5), transparent 50%, transparent 80%, rgba(255, 255, 255, 0.5)) 50% 50%/97% 97%;
+    background-repeat: no-repeat;
+}
+
+.switch .shadow {
+    transition: all 0.3s cubic-bezier(1, 0, 1, 1);
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 70%, rgba(0, 0, 0, 0.8));
+    background-repeat: no-repeat;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes light-off {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+}
     </style>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 ">
+    <!-- زر تبديل الوضع -->
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-gray-800 rounded-full shadow-lg">
+        <span id="theme-icon">🌙</span>
+    </button>
 
     <!-- Header -->
     <header class="gradient-bg py-12">
         <div class="container mx-auto text-center">
             <img src="https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/461830008_383882584794930_2100260804598677408_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=DEOHtTyhxJAQ7kNvgF7lCS3&_nc_oc=AdhXEbQ-854nhaN0uYroTVjq8Dy-6nOHcuR1VEEEvs6Kv__ByJVqY5PJ0jiIILfpdpM&_nc_zt=23&_nc_ht=scontent.fcai20-1.fna&_nc_gid=AQjSpvGZo1ofViUjadzgoC4&oh=00_AYCHenD53XpWK9nnVuLmuwTANuOEuyX7OXyfJQAIgJsFMw&oe=67BEB256"
-            alt="Logo" class="w-32 h-32 mx-auto rounded-full border-4 border-white shadow-xl shadow-red-500/90"
-            >
+                alt="Logo" class="w-32 h-32 mx-auto rounded-full border-1 border-white shadow-lg shadow-indigo-500/90">
             <h1 class="text-4xl font-bold mt-4">Infinity Tech Solution</h1>
             <p class="text-xl text-gray-200 mt-2">متخصصون في البرمجيات والأنظمة المدمجة وتقنيات IOT</p>
         </div>
@@ -92,58 +321,49 @@
 
     <!-- الفيديوهات -->
     <section class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-white">فيديوهات مميزة</h2>
+        <h2 class="text-3xl font-bold text-center mb-8 ">فيديوهات مميزة</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             <!-- الفيديو الأول -->
             <div class="video-card bg-gray-800 p-4 rounded-xl shadow-lg flex flex-col overflow-hidden">
                 <img src="smart farming.jpg" alt="#smart _farming_solution_by_IOT" class="w-full h-56 object-cover rounded-t-xl">
                 <div class="p-4 flex flex-col flex-grow justify-between">
-                    <h3 class="text-xl font-bold text-white mb-2 text-center">#smart _farming_solution_by_IOT</h3>
+                    <h3 class="text-xl font-bold  mb-2 text-center">#smart _farming_solution_by_IOT</h3>
                     <p class="text-gray-400 mb-4">
-            <pre dir="ltr" class="text-bold"> Project sections #Smart_farming  
-#attendancechallenge #power_mangement</pre> </p>
-                    <a href="https://www.facebook.com/infinity.tech.solition/videos/1378709469660145" 
-                       target="_blank" 
-                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center">
+                        <pre dir="ltr" class="text-bold"> Project sections #Smart_farming  
+#attendancechallenge #power_mangement</pre>
+                    </p>
+                    <a href="https://www.facebook.com/infinity.tech.solition/videos/1378709469660145" target="_blank" class="bg-blue-600  px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center btn">
                         مشاهدة الفيديو
                     </a>
                 </div>
             </div>
-    
             <!-- الفيديو الثاني -->
             <div class="video-card bg-gray-800 p-4 rounded-xl shadow-lg flex flex-col overflow-hidden">
                 <img src="2.jpg" alt="فيديو 2" class="w-full h-56 object-cover rounded-t-xl">
                 <div class="p-4 flex flex-col flex-grow justify-between">
-                    <h3 class="text-xl font-bold text-white mb-2">#البيت_الذكي🏠</h3>
+                    <h3 class="text-xl font-bold mb-2">#البيت_الذكي🏠</h3>
                     <p dir="rtr" class="text-gray-400 mb-4">
-                         ان العالم بقا يشتغل بشكل الكتروني فاحنا قررنا نسهل حياتنا داخل البيت عن طريق استخدام بعض الاساليب عن طريق الفون📱 </p>
-                    <a href="https://www.facebook.com/watch/?v=235020126160171&rdid=wRn75F2dkAH4V017" 
-                       target="_blank" 
-                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center">
+                        ان العالم بقا يشتغل بشكل الكتروني فاحنا قررنا نسهل حياتنا داخل البيت عن طريق استخدام بعض الاساليب عن طريق الفون📱
+                    </p>
+                    <a href="https://www.facebook.com/watch/?v=235020126160171&rdid=wRn75F2dkAH4V017" target="_blank" class="bg-blue-600  px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center btn">
                         مشاهدة الفيديو
                     </a>
                 </div>
             </div>
-    
             <!-- الفيديو الثالث -->
             <div class="video-card bg-gray-800 p-4 rounded-xl shadow-lg flex flex-col overflow-hidden">
                 <img src="3.jpg" alt="فيديو 3" class="w-full h-56 object-cover rounded-t-xl">
                 <div class="p-4 flex flex-col flex-grow justify-between">
-                    <h3 class="text-xl font-bold text-white mb-2">#روبوت إطفاء الحرائق 🚗</h3>
+                    <h3 class="text-xl font-bold  mb-2">#روبوت إطفاء الحرائق 🚗</h3>
                     <p dir="rtl" class="text-gray-400 mb-4">الإكتشاف والسيطرة وإخماد اي حرائق قد تنتج وذلك لغرض رئيسي وهو حماية العنصر البشري وتقليل الخسائر في الممتلكات والمنشآت
                     </p>
-                    <a href="https://www.facebook.com/watch/?v=1270143027200021&rdid=63S0kzpWp3fGktnR" 
-                       target="_blank" 
-                       class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center">
+                    <a href="https://www.facebook.com/watch/?v=1270143027200021&rdid=63S0kzpWp3fGktnR" target="_blank" class="bg-blue-600  px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full text-center btn">
                         مشاهدة الفيديو
                     </a>
                 </div>
             </div>
-    
         </div>
     </section>
-    
 
     <!-- فريق العمل -->
     <section class="bg-gray-800 py-12">
@@ -151,42 +371,39 @@
             <h2 class="text-3xl font-bold text-center mb-8">فريق العمل</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
-                   <!-- <img src="" alt=""
-                        class="w-24 h-24 mx-auto rounded-full mb-4"> -->
-                        <h3 class="text-xl ">Team leader</h3>
-                        <br><br><br> <br>
-                    <h3 class="text-xl font-bold">Emad Nagy</h3>
+                    <h3 class="text-xl ">Team leader</h3>
+                    <br><br><br> <br>
+                    <h3 class="text-xl font-bold">Emad nagy</h3>
                     <p class="text-gray-300">Full_Stack engineer</p>
                 </div>
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
-                    
-                        <h3 class="text-xl ">Team Member</h3>
-                        <br><br><br> <br>
-                    <h3 class="text-xl font-bold"> Hamed Gamal</h3>
+                    <h3 class="text-xl ">Team Member</h3>
+                    <br><br><br> <br>
+                    <h3 class="text-xl font-bold"> Hamed gamal</h3>
                     <p class="text-gray-300">Embedded systems engineer</p>
                 </div>
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
                     <h3 class="text-xl ">Team Member</h3>
                     <br><br><br> <br>
-                    <h3 class="text-xl font-bold"> Mostafa Mabrouk</h3>
+                    <h3 class="text-xl font-bold"> Mostafa mabrouk</h3>
                     <p class="text-gray-300">PCB engineer</p>
                 </div>
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
                     <h3 class="text-xl ">Team Member</h3>
-                        <br><br><br> <br>
+                    <br><br><br> <br>
                     <h3 class="text-xl font-bold"> Ahmed Elsafy</h3>
                     <p class="text-gray-300">PLC engineer</p>
                 </div>
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
                     <h3 class="text-xl ">Team Member</h3>
-                        <br><br><br> <br>
-                    <h3 class="text-xl font-bold"> Ahmed Abdel Rahman</h3>
+                    <br><br><br> <br>
+                    <h3 class="text-xl font-bold"> Ahmed abd-Elrahman</h3>
                     <p class="text-gray-300">IOT engineer</p>
                 </div>
                 <div class="card bg-gray-700 p-6 rounded-lg text-center">
                     <h3 class="text-xl ">Team Member</h3>
-                        <br><br><br> <br>
-                    <h3 class="text-xl font-bold"> Mohamed Abdel Naby</h3>
+                    <br><br><br> <br>
+                    <h3 class="text-xl font-bold"> Mohamed abd-Elnaby</h3>
                     <p class="text-gray-300">Hardware engineer</p>
                 </div>
             </div>
@@ -197,19 +414,17 @@
     <footer class="gradient-bg py-12">
         <div class="container mx-auto px-4 text-center">
             <div class="flex bg-black rounded-2xl hover:bg-blue-700">
-            <h2 class="text-3xl font-bold mb-8  p-2 text-center">اتصل بنا</h2>
-            <a href="https://chat.whatsapp.com/CilyJDtZLtn9BTgHQIgOtg" target="_blank" class="btn whatsapp m-auto ">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" width="50px"  >
-                واتساب
-            </a>
-            <a href="https://www.facebook.com/infinity.tech.solition" target="_blank" class="btn facebook m-auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt="فيسبوك" width="50px" >
-                فيسبوك
-            </a>
-        </div>
+                <h2 class="text-3xl font-bold mb-8  p-2 text-center text-white">اتصل بنا</h2>
+                <a href="https://chat.whatsapp.com/CilyJDtZLtn9BTgHQIgOtg" target="_blank" class=" whatsapp m-auto ">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="واتساب" width="50px">
+                    واتساب
+                </a>
+                <a href="https://www.facebook.com/infinity.tech.solition" target="_blank" class="facebook m-auto">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="فيسبوك" width="50px">
+                    فيسبوك
+                </a>
+            </div>
             <div class="flex justify-center gap-4">
-             
             </div>
         </div>
     </footer>
@@ -221,6 +436,38 @@
         </p>
     </div>
 
+    <!-- JavaScript لتغيير الوضع -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        // تحقق من تفضيلات المستخدم المخزنة
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                themeIcon.textContent = '🌙';
+            } else {
+                themeIcon.textContent = '☀️';
+            }
+        }
+
+        // تبديل الوضع
+        themeToggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
+    </script>
 </body>
 
 </html>
